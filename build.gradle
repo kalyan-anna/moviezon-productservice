@@ -24,11 +24,19 @@ repositories {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+configurations {
+    all*.exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+}
+
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("com.h2database:h2")
+    compile("net.sf.dozer:dozer:5.4.0")
+    testCompile("com.jayway.jsonpath:json-path")
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile("org.springframework.boot:spring-boot-starter-hateoas")
+    testCompile("com.fasterxml.jackson.core:jackson-databind")
 }
 
 task wrapper(type: Wrapper) {
