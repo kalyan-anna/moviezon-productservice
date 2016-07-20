@@ -82,10 +82,10 @@ public class ProductSearchSpec {
 
     @Test
     public void allFieldsInSearchResponseShouldHaveValue() throws Exception {
-        String response = mockMvc.perform(get("/product/search"))
+        String json = mockMvc.perform(get("/product/search"))
                 .andExpect(status().isOk())
                 .andReturn().getResponse().getContentAsString();
-        ProductSearchResponse responseObj = new ObjectMapper().readValue(response, ProductSearchResponse.class);
+        ProductSearchResponse responseObj = new ObjectMapper().readValue(json, ProductSearchResponse.class);
         assertThat(responseObj.getProducts(), (everyItem(hasProperty("productId", not(isEmptyOrNullString())))));
         assertThat(responseObj.getProducts(), (everyItem(hasProperty("title", not(isEmptyOrNullString())))));
         assertThat(responseObj.getProducts(), (everyItem(hasProperty("rating", not(isEmptyOrNullString())))));

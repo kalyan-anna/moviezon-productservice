@@ -11,4 +11,6 @@ public interface ProductRepository extends PagingAndSortingRepository<Product, L
     public List<Product> findAll();
 
     public List<Product> findByTitleContaining(String searchTerm);
+
+    public Product findByProductId(Integer productId);
 }

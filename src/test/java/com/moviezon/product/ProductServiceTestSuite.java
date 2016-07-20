@@ -1,5 +1,6 @@
 package com.moviezon.product;
 
+import com.moviezon.product.rest.spec.ProctSpec;
 import com.moviezon.product.rest.spec.ProductSearchSpec;
 import com.moviezon.product.rest.test.HttpMethodTest;
 import com.moviezon.product.rest.test.ProductSearchHateoasTest;
@@ -10,7 +11,8 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
         ProductSearchSpec.class,
         HttpMethodTest.class,
-        ProductSearchHateoasTest.class
+        ProductSearchHateoasTest.class,
+        ProctSpec.class
 })
 public class ProductServiceTestSuite {
 }
